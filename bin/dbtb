@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+#
+# Eithery, 2021
+# DBTB main executable script
+#
+require_relative '../lib/cli'
+
+begin
+  Dbtb::CLI.start
+rescue Dbtb::CLI::Error => e
+  puts "ERROR: #{e.message}"
+  exit 1
+end

@@ -5,6 +5,7 @@ gem 'paint', '~> 2.2.1'
 gem 'sequel', '~> 5.51.0'
 gem 'thor', '~> 1.1.0'
 gem 'tiny_tds', '~> 2.1.5'
+gem 'yaml', '~> 0.2.0'
 
 group :test do
   gem 'rspec-collection_matchers', '~> 1.2.0'

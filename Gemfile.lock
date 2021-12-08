@@ -27,6 +27,7 @@ GEM
     tiny_tds (2.1.5)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    yaml (0.2.0)
     zeitwerk (2.5.1)
 
 PLATFORMS
@@ -40,6 +41,7 @@ DEPENDENCIES
   sequel (~> 5.51.0)
   thor (~> 1.1.0)
   tiny_tds (~> 2.1.5)
+  yaml (~> 0.2.0)
 
 BUNDLED WITH
    2.2.32
