@@ -1,2 +1,2 @@
 # dbtb
-OpenDB database toolbox CLI
+OpenDB Database toolbox CLI
