@@ -5,6 +5,16 @@ Style/FrozenStringLiteralComment:
   EnforcedStyle: never
 Style/Documentation:
   Enabled: false
+Style/MutableConstant:
+  Enabled: false
+Style/SpecialGlobalVars:
+  Enabled: false
+
+Naming/HeredocDelimiterNaming:
+  Enabled: false
+
+Layout/HashAlignment:
+  Enabled: false
 
 Lint/NonDeterministicRequireOrder:
   Enabled: false

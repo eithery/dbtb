@@ -9,4 +9,5 @@ require 'yaml'
 require 'paint'
 require 'sequel'
 
+require_relative 'dbtb/version'
 require_relative 'dbtb/helpers/command_helper'

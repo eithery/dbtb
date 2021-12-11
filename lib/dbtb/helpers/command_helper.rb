@@ -17,11 +17,11 @@ module Dbtb
 
       map Array(aliases).map(&:to_s) => name
     end
-  end
 
-  private
+    private
 
-  def help_option
-    method_option :help, aliases: '-h', type: :boolean, desc: 'Display usage information'
+    def help_option
+      method_option :help, aliases: '-h', type: :boolean, desc: 'Display usage information'
+    end
   end
 end

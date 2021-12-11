@@ -1,0 +1,19 @@
+#
+# Eithery, 2021
+# The application configuration options
+#
+---
+# Host (server) name
+host: local
+instance: ''
+
+# DB credentials
+user: admin
+password: secret
+
+# Determines whether console/terminal output is colored
+colored: true
+
+# The array of paths with openDB schema
+# Can be relative or absolute
+db_schema: [db]
