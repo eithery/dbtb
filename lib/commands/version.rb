@@ -9,7 +9,7 @@ module Dbtb
     map %w[-v --version] => :version
 
     def version
-      puts "OpenDB Database toolbox version #{VERSION}"
+      puts APP_TITLE
     end
   end
 end

@@ -6,7 +6,7 @@
 require_relative '../lib/cli'
 
 begin
-  Dbtb::CLI.start
+  Dbtb::CLI.start(ARGV)
 rescue Dbtb::CLI::Error => e
   puts "ERROR: #{e.message}"
   exit 1

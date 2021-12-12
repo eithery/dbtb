@@ -6,23 +6,27 @@
 module Dbtb
   class CLI
     def help(*)
-      args.empty? ? with_greeting { super } : super
+      if ARGV.empty?
+        puts [APP_TITLE, APP_USAGE, HELP_MSG].join("\n\n")
+      elsif args.empty?
+        with_greeting { super }
+      else
+        super
+      end
     end
 
     private
 
     def with_greeting
-      puts GREETING + $/
+      puts [APP_TITLE, APP_USAGE].join("\n\n"), "\n"
       result = yield
       puts HELP_COMMAND_MSG
       result
     end
 
+    HELP_MSG = "Run 'dbtb help' or 'dbtb -h' for more information about supported commands and options"
     HELP_COMMAND_MSG = "Run 'dbtb help <COMMAND>' for more information about a specific command"
-    GREETING = <<~EOS
-      OpenDB Database toolbox for MS SQL Server. Version #{VERSION}
-
-      usage: dbtb [<global options>] <COMMAND> [<args>] [<command options>]
-    EOS
+    APP_TITLE = "OpenDB database toolbox. Version #{VERSION}"
+    APP_USAGE = 'usage: dbtb [<global options>] <COMMAND> [<args>] [<command options>]'
   end
 end
