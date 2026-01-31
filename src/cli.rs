@@ -1,6 +1,4 @@
 #![allow(dead_code)]
-
-use std::path::Path;
 use colored::{ColoredString, Colorize};
 use crate::env;
 
@@ -19,11 +17,6 @@ pub(crate) fn display_app_header(command: &str) {
     println!("Current environment: `{}`", cyan(&env::current_environment().to_string()));
     blank_line();
     println!("Load app configuration:")
-}
-
-
-pub(crate) fn file_loaded(file_path: &Path) {
-    println!("{}  {}", file_path.display(), green("LOADED"));
 }
 
 

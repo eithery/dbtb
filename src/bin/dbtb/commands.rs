@@ -1,5 +1,3 @@
-pub(crate) mod db;
-
 use std::path::PathBuf;
 use clap::Subcommand;
 use crate::help;
@@ -30,11 +28,5 @@ pub(crate) enum Commands {
 
         #[arg(short, long, help = "Rebuild existing databases")]
         force: bool
-    },
-
-    #[command(about = "The set of database related subcommands")]
-    Db {
-        #[command(subcommand)]
-        command: db::Commands
     }
 }

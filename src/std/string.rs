@@ -67,20 +67,3 @@ impl<T: AsRef<str>> Normalize for T {
         self.as_ref().trim().to_lowercase()
     }
 }
-
-
-#[allow(dead_code)]
-pub(crate) trait TryParse<T> {
-    fn try_parse(&self) -> Option<T>;
-}
-
-
-impl<T: AsRef<str>> TryParse<bool> for T {
-    fn try_parse(&self) -> Option<bool> {
-        match self.normalize().as_str() {
-            "1" | "y" | "yes" | "t" | "true" => Some(true),
-            "0" | "n" | "no" | "f" | "false" => Some(false),
-            _ => None
-        }
-    }
-}
