@@ -4,7 +4,7 @@ mod help;
 
 use std::process;
 use clap::{CommandFactory, Parser};
-use dbtb::{create_database, drop_database, create_tables, drop_tables};
+use dbtb::{build_databases, create_database, create_tables, drop_database, drop_tables};
 use dbtb::Result;
 use crate::cli::{Cli, APP_TITLE};
 use crate::commands::{Commands, db};
@@ -25,6 +25,15 @@ fn run() -> Result<()> {
         return Ok(());
     }
     match &cli.command {
+        Some(Commands::Build {
+            source,
+            database,
+            user,
+            password,
+            all,
+            force
+        }) => build_databases(source, database.as_deref(), user.as_deref(), password.as_deref(), *all, *force),
+
         Some(Commands::Db { command }) =>
             match command {
                 db::Commands::Migrate {

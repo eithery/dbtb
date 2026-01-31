@@ -8,7 +8,7 @@ pub(crate) const APP_TITLE: &str = concat!("\x1b[96mDatabase Toolbox, version ",
 
 #[derive(Parser)]
 #[command(
-    name = "etl",
+    name = "dbtb",
     version,
     about = APP_TITLE,
     long_about = None,
