@@ -27,12 +27,21 @@ fn run() -> Result<()> {
     match &cli.command {
         Some(Commands::Build {
             source,
+            host,
             database,
             user,
             password,
             all,
             force
-        }) => build_databases(source, database.as_deref(), user.as_deref(), password.as_deref(), *all, *force),
+        }) => build_databases(
+            source.as_deref(),
+            host.as_deref(),
+            database.as_deref(),
+            user.as_deref(),
+            password.as_deref(),
+            *all,
+            *force
+        ),
 
         None => Ok(Cli::command().print_help()?)
     }

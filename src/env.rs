@@ -2,6 +2,7 @@
 
 use std::env::{self, VarError};
 use std::fmt::Display;
+use crate::config::database::ConnectionType;
 use crate::std::string::Normalize;
 
 
@@ -12,7 +13,7 @@ const DB_INSTANCE_ENV_VAR: &str = "DBTB_DB_INSTANCE";
 const DB_NAME_ENV_VAR: &str = "DBTB_DB_NAME";
 const DB_USER_ENV_VAR: &str = "DBTB_DB_USER";
 const DB_PWD_ENV_VAR : &str = "DBTB_DB_PWD";
-const DB_AUTH_TYPE_ENV_VAR: &str = "DBTB_AUTH_TYPE";
+const DB_CONNECTION_TYPE_ENV_VAR: &str = "DBTB_CONNECTION_TYPE";
 
 pub(crate) const CONFIG_HOME_ENV_VAR: &str = "DBTB_CONFIG_HOME";
 
@@ -88,7 +89,7 @@ pub(crate) fn db_pwd() -> Option<String> {
 }
 
 
-// pub(crate) fn db_auth_type() -> Option<ConnectionType> {
-//     env::var(DB_AUTH_TYPE_ENV_VAR).ok()
-//         .map(|conn| conn.parse().unwrap())
-// }
+pub(crate) fn db_connection_type() -> Option<ConnectionType> {
+    env::var(DB_CONNECTION_TYPE_ENV_VAR).ok()
+        .map(|conn| conn.parse().unwrap())
+}

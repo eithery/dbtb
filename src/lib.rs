@@ -1,14 +1,16 @@
 pub mod cli;
+mod config;
 mod env;
 mod errors;
 mod std;
 
-pub use std::result::Result;
 use ::std::path::Path;
+pub use crate::std::result::Result;
 
 
-pub fn build_databases<P: AsRef<Path>>(
-    source: P,
+pub fn build_databases(
+    source: Option<&Path>,
+    host: Option<&str>,
     database: Option<&str>,
     user: Option<&str>,
     password: Option<&str>,
@@ -17,6 +19,7 @@ pub fn build_databases<P: AsRef<Path>>(
 ) -> Result<()> {
     println!("\nBuild databases.");
     println!("{:?}", source.as_ref());
+    println!("{:?}", host.as_ref());
     println!("{:?}", database.as_ref());
     println!("{user:?}");
     println!("{password:?}");

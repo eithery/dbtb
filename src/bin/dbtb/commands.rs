@@ -8,11 +8,14 @@ use crate::help;
 pub(crate) enum Commands {
     #[command(
         about = "Build database(s) based on SQL or YAML database definitions",
-        help_template = help::BUILD_COMMAND_TEMPLATE
+        help_template = help::COMMAND_TEMPLATE
     )]
     Build {
-        #[arg(value_name = "SOURCE_PATH")]
-        source: PathBuf,
+        #[arg(short, long, value_name = "SOURCE_PATH", help = "Path to SQL or YAML database definitions")]
+        source: Option<PathBuf>,
+
+        #[arg(long, value_name = "DB_SERVER_HOST", help = "Database server host")]
+        host: Option<String>,
 
         #[arg(short, long, value_name = "DATABASE_NAME", help = "Database name")]
         database: Option<String>,
